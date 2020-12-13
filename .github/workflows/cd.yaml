@@ -33,7 +33,7 @@ jobs:
         pacman-key --init && pacman-key --populate
         pacman -Syyuuv --noconfirm --needed --color always \
           archlinux-keyring base base-devel sudo repo git git-lfs python-pip go zstd
-        useradd -md /home/repo -p repo repo && echo 'repo ALL=NOPASSWD:ALL' >> /etc/sudorrs
+        useradd -md /home/repo -p repo repo && echo 'repo ALL=NOPASSWD:ALL' >> /etc/sudoers
         su repo -c "
           git clone https://aur.archlinux.org/yay-git.git --depth=1 --single-branch ~/.yay-git-aur && export ____pwdchan=$PWD && cd ~/.yay-git-aur && yes|makepkg -si && cd $____pwdchan
           yes ''|yay -Syyuu --needed --devel --timeupdate \
