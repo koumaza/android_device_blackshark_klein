@@ -30,10 +30,10 @@ jobs:
     steps:
     - name: Env
       run: |
-        pacman -Syyuuv --noconfirm --needed --debug --color always \
+        pacman -Syyuuv --noconfirm --needed --color always \
           base base-devel repo git git-lfs python-pip go zstd
         git clone https://aur.archlinux.org/yay-git.git --depth=1 --single-branch ~/.yay-git-aur && export ____pwdchan=$PWD && cd ~/.yay-git-aur && yes|makepkg -si && cd $____pwdchan
-        yay -Syyuu --needed --devel --timeupdate \
+        yes ''|yay -Syyuu --needed --devel --timeupdate \
           linux-tools-meta \
           android-sdk android-sdk-platform-tools android-udev aosp-devel bc bison ccache curl esd-oss flex gcc-libs-multilib gcc-multilib git gnupg gperf inetutils jdk-openjdk lld lib32-gcc-libs lib32-glibc lib32-libusb lib32-libusb-compat lib32-ncurses lib32-ncurses5-compat-libs lib32-readline lib32-zlib libpng libtool-multilib libusb libusb-compat libxslt mesa multilib-devel ncurses ncurses5-compat-libs perl perl-switch pngcrush python2 readline repo rsync schedtool sdl squashfs-tools tcp_wrappers termcap unzip wxgtk zip zlib lib32-libpng xcur2png gnuplot ttf-droid ttf-dejavu fontconfig
         
