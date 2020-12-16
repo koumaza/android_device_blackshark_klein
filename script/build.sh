@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
 mkdir -p ~/recovery_${GITHUB_REPOSITORY}
 cd ~/recovery_${GITHUB_REPOSITORY}
 repo init -u git://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-10.0
