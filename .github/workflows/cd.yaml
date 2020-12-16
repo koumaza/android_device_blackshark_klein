@@ -27,9 +27,12 @@ jobs:
     needs: [Tag]
     runs-on: ubuntu-20.04
     steps:
+    - uses: actions/checkout@main
+      with:
+        fetch-depth: 0
     - name: Env
       shell: bash
-      run: bash purge.sh
+      run: bash script/purge.sh
     - name: Build
       shell: bash
       run: |
