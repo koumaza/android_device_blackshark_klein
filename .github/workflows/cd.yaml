@@ -1,7 +1,7 @@
 name: CD
 on:
   push:
-    branches: [ wip ]
+    branches: [ wipwip ]
     tags:
       - '!*'
   pull_request:
