@@ -32,7 +32,9 @@ jobs:
         fetch-depth: 0
     - name: Env
       shell: bash
-      run: bash script/purge.sh
+      run: |
+        bash script/purge.sh
+        podman container run -it --name "archlinux" archlinux /usr/bin/env bash script/env.sh
     - name: Build
       shell: bash
       run: |
